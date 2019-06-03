@@ -11,8 +11,13 @@ var options = {
   path: '/'
 }
 
-var callback = function (){
-  log('in response handler callback!');
+var callback = function(response) {
+  console.log('In response handler callback!');
+
+  response.on('data', function(chunk){
+    console.log('[-- CHUNK OF LENGTH ', chunk.length + ' --]');
+    log(chunk.toString());
+  });
 }
 
 log('Im about to make the request!');
