@@ -4,7 +4,7 @@ var log = function(str){
   console.log(str);
 }
 
-log(txt);
+// log(txt);
 
 var fs = require("fs");
 
